@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2026-10-01 17:30:15">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Automatically created by the system</description>
+<inserted/>
+<name>Ebonding flow set</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>230e17d3836b0710f5886ed0deaad310</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-10-01 17:30:11</sys_created_on>
+<sys_id>dd29e52f83eb4710f5886ed0deaad3e2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-10-01 17:30:11</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_dictionary_sys_user_u_web_services_access_only</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_dictionary action="INSERT_OR_UPDATE" element="u_web_services_access_only" table="sys_user"><active>true</active><array>false</array><attributes/><audit>false</audit><calculation/><choice>0</choice><choice_field/><choice_table/><column_label>web services access only</column_label><comments/><create_roles/><default_value/><defaultsort/><delete_roles/><dependent/><dependent_on_field/><display>false</display><dynamic_creation>false</dynamic_creation><dynamic_creation_script/><dynamic_default_value/><dynamic_ref_qual/><element>u_web_services_access_only</element><element_reference>false</element_reference><foreign_database/><formula/><function_definition/><function_field>false</function_field><internal_type display_value="">boolean</internal_type><mandatory>false</mandatory><max_length>40</max_length><name>sys_user</name><next_element/><primary>false</primary><read_only>false</read_only><read_only_option/><read_roles/><reference/><reference_cascade_rule/><reference_floats>false</reference_floats><reference_key/><reference_qual/><reference_qual_condition/><reference_type/><spell_check>false</spell_check><staged>false</staged><sys_class_name>sys_dictionary</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 11:35:06</sys_created_on><sys_id>44e79c6f83634710f5886ed0deaad358</sys_id><sys_name>web services access only</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_dictionary_sys_user_u_web_services_access_only</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 11:35:06</sys_updated_on><table_reference>false</table_reference><text_index>false</text_index><unique>false</unique><use_dependent_field>false</use_dependent_field><use_dynamic_default>false</use_dynamic_default><use_reference_qualifier>simple</use_reference_qualifier><virtual>false</virtual><virtual_type>script</virtual_type><widget/><write_roles/><xml_view>false</xml_view></sys_dictionary></record_update>]]></payload>
+<payload_hash>726434381</payload_hash>
+<remote_update_set display_value="Ebonding flow set">dd29e52f83eb4710f5886ed0deaad3e2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-10-01 17:30:11</sys_created_on>
+<sys_id>1529e52f83eb4710f5886ed0deaad3e3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a0f73f2f420000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-10-01 17:30:11</sys_updated_on>
+<table>sys_user</table>
+<target_name>User.web services access only</target_name>
+<type>Dictionary</type>
+<update_domain>global</update_domain>
+<update_guid>28e79c6fd86347101bc52e907a6e36fe</update_guid>
+<update_guid_history>28e79c6fd86347101bc52e907a6e36fe:726434381</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_client_8b401fc6c3022110acfce1018d40dddb</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;refreshActivityFieldListPerType() checks if the type is "DATE_TIME" then it shows glide_date_time fields  and when the type is "DEFAULT" then it doesn't show glide_date_time fields&lt;/description&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;false&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Refresh field list based on type&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+	showLoadingDialog(); //do not allow users to view the field drop down until the date/time fields are hidden for default type
+    jQuery(document).ready(function() {
+        setTimeout(refreshActivityFieldListPerType, 1500); 
+    }); 
+}
+function refreshActivityFieldListPerType() {
+    var allTables = '',
+        dateTimeFields = [];
+    var gaProminUtil = new GlideAjax('global.ProminUtilsAJAX');
+    gaProminUtil.addParam('sysparm_name', 'getDateTimeFieldList');
+    gaProminUtil.addParam('sysparm_tableName', g_form.getReference('entity').table);
+    gaProminUtil.getXMLWait();
+    var fieldList = gaProminUtil.getAnswer();
+
+    if (fieldList != null &amp;&amp; fieldList.length &gt; 0) {
+        dateTimeFields = fieldList.split(",");
+		var type = g_form.getValue("type");
+		var options = g_form.getOptionControl("field").options;
+        if (type == "DATE_TIME") { // show all date time field options 
+            for (var cnt = 0; cnt &lt; options.length; cnt++) {
+                if (dateTimeFields.includes(options[cnt].value)) {
+                    options[cnt].show();
+                } else {
+                    options[cnt].hide();
+                }
+            }
+        } else if(type == "DEFAULT") {
+            for (cnt = 0; cnt &lt; options.length; cnt++) {
+                if (dateTimeFields.includes(options[cnt].value)) {
+                    options[cnt].hide();
+                } else {
+                    options[cnt].show();
+                }
+            }		
+		}
+    }
+	hideLoadingDialog();
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-04-08 18:30:55&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;8b401fc6c3022110acfce1018d40dddb&lt;/sys_id&gt;&lt;sys_mod_count&gt;21&lt;/sys_mod_count&gt;&lt;sys_name&gt;Refresh field list based on type&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Process Mining Core" source="com.sn_process_optimization"&gt;c71f76738cdd03100a22deb6dd2b4e3b&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_8b401fc6c3022110acfce1018d40dddb&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-01 12:30:54&lt;/sys_updated_on&gt;&lt;table&gt;promin_activity_def&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-348060899</payload_hash>
+<remote_update_set display_value="Ebonding flow set">dd29e52f83eb4710f5886ed0deaad3e2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-10-01 17:30:11</sys_created_on>
+<sys_id>2d29e52f83eb4710f5886ed0deaad3e4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a0f7723d600000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-10-01 17:30:11</sys_updated_on>
+<table>promin_activity_def</table>
+<target_name>Refresh field list based on type</target_name>
+<type>Client Script</type>
+<update_domain>global</update_domain>
+<update_guid>d5a428e7dbe347103fa9cb91cb24da03</update_guid>
+<update_guid_history>d5a428e7dbe347103fa9cb91cb24da03:-348060899,53342ca7e4e34710e7fa6a2b0c45b0ac:-124560816,5b342ca7fae34710b8d04154a20542a8:-348060899</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_section_5134502bc611227c019dbdc4d7e32319</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="5134502bc611227c019dbdc4d7e32319" sys_domain="global" table="sys_user" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>user_name</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>d21038af83274710f5886ed0deaad34f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>first_name</element><position>1</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>9e1038af83274710f5886ed0deaad34f</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>last_name</element><position>2</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>5a1038af83274710f5886ed0deaad350</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>title</element><position>3</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>161038af83274710f5886ed0deaad351</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>department</element><position>4</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>de1038af83274710f5886ed0deaad351</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>user_password</element><position>5</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>9a1038af83274710f5886ed0deaad352</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>password_needs_reset</element><position>6</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>561038af83274710f5886ed0deaad353</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>locked_out</element><position>7</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>121038af83274710f5886ed0deaad354</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>active</element><position>8</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>da1038af83274710f5886ed0deaad354</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>identity_type</element><position>9</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>961038af83274710f5886ed0deaad355</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>internal_integration_user</element><position>10</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>521038af83274710f5886ed0deaad356</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>11</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>1e1038af83274710f5886ed0deaad356</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>email</element><position>12</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>d61038af83274710f5886ed0deaad357</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>preferred_language</element><position>13</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>921038af83274710f5886ed0deaad358</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>notification</element><position>14</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>5e1038af83274710f5886ed0deaad358</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>calendar_integration</element><position>15</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:56</sys_created_on><sys_id>1a1038af83274710f5886ed0deaad359</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:56</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>date_format</element><position>16</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:57</sys_created_on><sys_id>d21038af83274710f5886ed0deaad35a</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>phone</element><position>17</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:57</sys_created_on><sys_id>ae1038af83274710f5886ed0deaad35a</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>mobile_phone</element><position>18</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:57</sys_created_on><sys_id>6a1038af83274710f5886ed0deaad35b</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>photo</element><position>19</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:57</sys_created_on><sys_id>261038af83274710f5886ed0deaad35c</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.end_split</element><position>20</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:57</sys_created_on><sys_id>ee1038af83274710f5886ed0deaad35c</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:57</sys_updated_on><sys_user/><type>.end_split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>web_service_access_only</element><position>21</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 13:20:57</sys_created_on><sys_id>aa1038af83274710f5886ed0deaad35d</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="sys_user" sys_domain="global" view="Default view">5134502bc611227c019dbdc4d7e32319</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 13:20:57</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>sys_user</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>GUEST</sys_created_by><sys_created_on>2004-05-02 00:00:00</sys_created_on><sys_domain>global</sys_domain><sys_domain_path/><sys_id>5134502bc611227c019dbdc4d7e32319</sys_id><sys_mod_count>3</sys_mod_count><sys_name>sys_user</sys_name><sys_overrides/><sys_package display_value="Identity type" source="com.glide.identity.identity_type">8c4a72b78cd903100a22deb6dd2b4e2d</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_ui_section_5134502bc611227c019dbdc4d7e32319</sys_update_name><sys_updated_by>system</sys_updated_by><sys_updated_on>2012-07-24 20:17:36</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+<payload_hash>-1512738668</payload_hash>
+<remote_update_set display_value="Ebonding flow set">dd29e52f83eb4710f5886ed0deaad3e2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-10-01 17:30:11</sys_created_on>
+<sys_id>6129e52f83eb4710f5886ed0deaad3e5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a0f7a0104d0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-10-01 17:30:11</sys_updated_on>
+<table>sys_user</table>
+<target_name>User</target_name>
+<type>Form Layout</type>
+<update_domain>global</update_domain>
+<update_guid>6a1038af94274710c225386bb5ec427b</update_guid>
+<update_guid_history>6a1038af94274710c225386bb5ec427b:-1512738668,c8aae4e3572747101a6ce1cdaa824194:-1893767850,1d12e4a3f8e34710fcddf267cb673487:1172824520,09d1ac63bee347101be23341ff4e8d8d:-783101010,b1ab946787a34710f651e57eddc4b91a:1382521554,2ce7dc6f0163471067503c603e8c23f8:1811487801,c3b698ebe5634710e4ad11820294782e:464429218,5466dcab21634710dfb33c6b7ac60102:-1893767850,9e79df97cf2b07102a1b3b85351bb09a:660692977,6e79df97012b0710a6a64444ab1f27b1:-929930776,1369db970d2b07109d40505a4c5dd74a:951982731</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_documentation_sys_user_u_web_services_access_only_en</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="u_web_services_access_only" label="web services access only" language="en" table="sys_user"><sys_documentation action="INSERT_OR_UPDATE"><element>u_web_services_access_only</element><help/><hint/><label>web services access only</label><language>en</language><name>sys_user</name><plural>web services access onlies</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-10-01 11:35:07</sys_created_on><sys_id>04e79c6f83634710f5886ed0deaad3be</sys_id><sys_mod_count>0</sys_mod_count><sys_name>web services access only</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_documentation_sys_user_u_web_services_access_only_en</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-10-01 11:35:07</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+<payload_hash>69936302</payload_hash>
+<remote_update_set display_value="Ebonding flow set">dd29e52f83eb4710f5886ed0deaad3e2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-10-01 17:30:11</sys_created_on>
+<sys_id>a129e52f83eb4710f5886ed0deaad3e4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a0f73f2f960000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-10-01 17:30:11</sys_updated_on>
+<table>sys_user</table>
+<target_name>User.web services access only</target_name>
+<type>Field Label</type>
+<update_domain>global</update_domain>
+<update_guid>28e7dc6fd9634710067f6d1b0122db03</update_guid>
+<update_guid_history>28e7dc6fd9634710067f6d1b0122db03:69936302</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_properties_fe532a6243111110110905c02bb8f2d5</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties"><sys_properties action="INSERT_OR_UPDATE"><choices/><description>Toggles Auto resolution for KMF Plug-in issues</description><ignore_cache>true</ignore_cache><is_private>false</is_private><name>sn_kmf.resolution_framework.enabled</name><read_roles>maint,admin,sn_kmf.cryptographic_auditor,sn_kmf.cryptographic_integrator,sn_kmf.cryptographic_manager,sn_kmf.cryptographic_operator,sn_kmf.admin</read_roles><suffix>resolution_framework.enabled</suffix><sys_class_name>sys_properties</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-08-17 01:33:05</sys_created_on><sys_id>fe532a6243111110110905c02bb8f2d5</sys_id><sys_mod_count>6</sys_mod_count><sys_name>sn_kmf.resolution_framework.enabled</sys_name><sys_package display_value="Key Management Framework" source="com.glide.kmf.global">f050f2778c1103100a22deb6dd2b4eca</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_properties_fe532a6243111110110905c02bb8f2d5</sys_update_name><sys_updated_by>system</sys_updated_by><sys_updated_on>2026-10-01 08:42:24</sys_updated_on><type>boolean</type><value>true</value><write_roles>maint,sn_kmf.cryptographic_manager,sn_kmf.admin</write_roles></sys_properties><sys_translated_text action="delete_multiple" query="documentkey=fe532a6243111110110905c02bb8f2d5"/></record_update>]]></payload>
+<payload_hash>1275433531</payload_hash>
+<remote_update_set display_value="Ebonding flow set">dd29e52f83eb4710f5886ed0deaad3e2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-10-01 17:30:11</sys_created_on>
+<sys_id>e529e52f83eb4710f5886ed0deaad3e4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a0f6a114a80000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-10-01 17:30:11</sys_updated_on>
+<table/>
+<target_name>sn_kmf.resolution_framework.enabled</target_name>
+<type>System Property</type>
+<update_domain>global</update_domain>
+<update_guid>be50f7df7feb07101eb09699431b510f</update_guid>
+<update_guid_history>be50f7df7feb07101eb09699431b510f:1275433531,4140b3dff0eb071002da81605d840c62:-8828164,3ff11093beef83109c52df9d3241ead9:1275433531,18f1109341ef83101972a03fc2573a66:-8828164,75c2b13a9a230310e4562150483a0615:1275433531,93b2713ac6230310e439e4dba222bcca:-8828164,c7b2713a4f2303104eaceb091aa96792:1275433531</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
