@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2026-09-30 19:21:47">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Ebonding Integration Business Rules</description>
+<inserted/>
+<name>Ebonding Integration BR</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>4248e457936f47902f24f847dd03d6ae</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-09-30 19:21:41</sys_created_on>
+<sys_id>0519f01b93ef47902f24f847dd03d6ee</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-09-30 19:21:41</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_357daa4793af07902f24f847dd03d6c8</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;false&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;incident&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="incident"&gt;priority=2^EQ&lt;item display_value="2 - High" endquery="false" field="priority" goto="false" newquery="false" operator="=" or="false" value="2"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;ebondingdev449240&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	
+ try { 
+ var r = new sn_ws.RESTMessageV2('Ebondingdev449240', 'create Insicdent Ticketdev449240');
+ r.setStringParameterNoEscape('des',current.description);
+ r.setStringParameterNoEscape('cat',current.category);
+ r.setStringParameterNoEscape('requester ',current.requester);
+ r.setStringParameterNoEscape('short_des',current.short_description)
+
+
+ var response = r.execute();
+ var responseBody = response.getBody();
+ var httpStatus = response.getStatusCode();
+}
+catch(ex) {
+ var message = ex.message;
+}
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-09-30 09:29:50&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;357daa4793af07902f24f847dd03d6c8&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;ebondingdev449240&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_357daa4793af07902f24f847dd03d6c8&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-09-30 19:07:31&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=357daa4793af07902f24f847dd03d6c8"/&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;357daa4793af07902f24f847dd03d6c8&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-09-30 09:29:45&lt;/sys_created_on&gt;&lt;sys_id&gt;0a917e0793af07902f24f847dd03d696&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-09-30 09:29:45&lt;/sys_updated_on&gt;&lt;table&gt;sys_script&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>312194131</payload_hash>
+<remote_update_set display_value="Ebonding Integration BR">0519f01b93ef47902f24f847dd03d6ee</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-09-30 19:21:41</sys_created_on>
+<sys_id>4919f01b93ef47902f24f847dd03d6ee</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a0f3b702360000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-09-30 19:21:41</sys_updated_on>
+<table>incident</table>
+<target_name>ebondingdev449240</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>69d5fc538def4790b2e87108c452ef59</update_guid>
+<update_guid_history>69d5fc538def4790b2e87108c452ef59:312194131,20e8f2838cef0790ba5fc6014af6113c:-1619031456,15927acf16af0790901932d6e48a817b:-597992383,ef91fa4f89af0790745826f784fe77a6:1935547062</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_c91e901f93eb47902f24f847dd03d6d3</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;incident&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="incident"&gt;priority=2^EQ&lt;item display_value="2 - High" endquery="false" field="priority" goto="false" newquery="false" operator="=" or="false" value="2"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;BR Rules Ebonding&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    if (gs.nil(current.caller_id)) {
+        return;
+    }
+
+    try {
+        var r = new sn_ws.RESTMessageV2('Ebonding449240', 'Create Incident 449240');
+        r.setStringParameterNoEscape('requester', current.caller_id); // update 'caller_id' to your intended field
+        r.setStringParameterNoEscape('des', current.description);
+        r.setStringParameterNoEscape('cat', current.category);
+        r.setStringParameterNoEscape('short_des', current.short_description);
+        r.setStringParameterNoEscape('Sys_id', current.sys_id);
+
+        var response = r.execute();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+        gs.addInfoMessage('HTTP Status==' + httpStatus);
+        gs.addInfoMessage('Body==' + responseBody);
+
+    } catch (ex) {
+        var message = ex.message;
+    }
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-09-30 18:05:29&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;c91e901f93eb47902f24f847dd03d6d3&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;BR Rules Ebonding&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_c91e901f93eb47902f24f847dd03d6d3&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-09-30 18:54:52&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=c91e901f93eb47902f24f847dd03d6d3"/&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;c91e901f93eb47902f24f847dd03d6d3&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-09-30 18:05:27&lt;/sys_created_on&gt;&lt;sys_id&gt;58a7249f93eb47902f24f847dd03d6bb&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-09-30 18:05:27&lt;/sys_updated_on&gt;&lt;table&gt;sys_script&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1030381241</payload_hash>
+<remote_update_set display_value="Ebonding Integration BR">0519f01b93ef47902f24f847dd03d6ee</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-09-30 19:21:42</sys_created_on>
+<sys_id>c519f01b93ef47902f24f847dd03d6ef</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a0f3ab6fe00000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-09-30 19:21:42</sys_updated_on>
+<table>incident</table>
+<target_name>BR Rules Ebonding</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>e4f27cdbbaaf4790be4988fd773d124b</update_guid>
+<update_guid_history>e4f27cdbbaaf4790be4988fd773d124b:1030381241,2212f4d790af47907c0452e403077720:-1527750802,32c038d758af4790553c06718b318a02:1168731379,bb7be05b606f479049aab140546b3c36:1843647986,89a76017946f47907d48f239b367b43a:1239359089</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
